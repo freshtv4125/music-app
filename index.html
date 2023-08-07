@@ -195,11 +195,11 @@ input[type="range"]::-webkit-slider-thumb:vertical {
         </div>
         <span class="song-name"></span>
         <div class="controls">
-          <button class="control backward"><i class="bi bi-skip-backward"></i></button>
-           <button class="control play"><i class="bi bi-play"></i></button>
-            <button class="control next"><i class="bi bi-skip-forward"></i></button>
+          <button class="control backward"><i class="bi-skip-backward"></i></button>
+           <button class="control play"><i class="bi-play"></i></button>
+            <button class="control next"><i class="bi-skip-forward"></i></button>
             <div class="beam">
-              <i class="bi bi-music-note-beamed"></i>
+              <i class="bi-music-note-beamed"></i>
 
             </div>
         </div>
@@ -256,7 +256,7 @@ input[type="range"]::-webkit-slider-thumb:vertical {
      songIndex = number;
      audio.src = `${folder}${songs[songIndex]}`;
      music_list.classList.toggle("hide");
-     play.innerHTML = `<i class='bi bi-pause'></i>`;
+     play.innerHTML = `<i class='bi-pause'></i>`;
      audio.play();
        
    }
@@ -289,7 +289,7 @@ audio.src = `${folder}${songs[songIndex]}`;
      
    }
    audio.play();
-   play.innerHTML = `<i class='bi bi-pause'></i>`;
+   play.innerHTML = `<i class='bi-pause'></i>`;
    setInterval(function(){
      if(audio.paused === true){
        
@@ -308,9 +308,9 @@ audio.src = `${folder}${songs[songIndex]}`;
      if(tag.paused == true){
      tag.play();
      
-     play.innerHTML = "<i class='bi bi-pause'></i>";
+     play.innerHTML = "<i class='bi-pause'></i>";
      }else{
-       play.innerHTML = "<i class='bi bi-play'></i>";
+       play.innerHTML = "<i class='bi-play'></i>";
             tag.pause();
      clearInterval(interval)
      
@@ -349,11 +349,7 @@ audio.src = `${folder}${songs[songIndex]}`;
      audio.src = `${folder}${songs[songIndex]}`
    
    }
-  async function battery(){
-   let battery = await navigator.getBattery();
-   let data = await battery.json;
-   console.log(battery)
-  }
+  
   
   battery();
    function nextSong(){
@@ -368,13 +364,13 @@ audio.src = `${folder}${songs[songIndex]}`;
    
    next.addEventListener("click", () => {
      nextSong();
-    play.innerHTML = `<i class='bi bi-pause'></i>`;
+    play.innerHTML = `<i class='bi-pause'></i>`;
      audio.play();
    });
    
    backward.addEventListener("click", () => {
      backSong();
-    play.innerHTML = `<i class='bi bi-pause'></i>`;
+    play.innerHTML = `<i class='bi-pause'></i>`;
      audio.play();
    });
    
@@ -382,7 +378,7 @@ audio.src = `${folder}${songs[songIndex]}`;
    setInterval(function(){
      if(audio.currentTime == audio.duration){
      nextSong();
-    play.innerHTML = `<i class='bi bi-pause'></i>`;
+    play.innerHTML = `<i class='bi-pause'></i>`;
      audio.play();
    }
    }, 10);
